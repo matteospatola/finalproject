@@ -12,42 +12,45 @@ def get_weather(api_key, city_name):
     #print(json.dumps(response, indent=2)
 
 
-
-def org_data():
-    data = get_weather(weatherkey.api_key, input("What is your location: "))
-    keys = ['weather', 'main', 'wind']
-    values = []
-    for k in data:
-        if k in keys:
-            values.append(data[k])
-
-
-print(org_data())
-
-# testing git commit
+def temp_convert(kelvin):
+    celsius = kelvin - 273.15
+    fahrenheit = celsius * (9/5) + 32
+    return fahrenheit
 
 
 
 
 
+data = (get_weather(weatherkey.api_key, "london"))
+
+
+temp_kelvin = data['main']['temp']
+temp_fahrenheit = temp_convert(temp_kelvin)
+
+feel_like_kelvin = data['main']['feels_like']
+feel_like_fahrenheit = temp_convert(feel_like_kelvin)
+
+min_temp_kelvin = data['main']['temp_min']
+min_temp_fahrenheit = temp_convert(min_temp_kelvin)
+
+max_temp_kelvin = data['main']['temp_max']
+max_temp_fahrenheit = temp_convert(max_temp_kelvin)
+
+description = data['weather'][0]['description']
+
+humidity = data['main']['humidity']
+
+wind_speed = data['wind']['speed']
+
+sunrise_time = datetime.datetime.utcfromtimestamp(data['sys']['sunrise'] + data['timezone'])
+print(sunrise_time)
 
 
 
 
 
 
-
-org_data()
-
-
-
-
-
-
-
-print(org_data())
-
-
+print(data)
 
 
 
