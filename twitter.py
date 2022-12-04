@@ -22,7 +22,7 @@ def tweet(api: tweepy.API, message: str, image_path=None):
 
 if __name__ == "__main__":
     api = api()
-    tweet(api, "Pat is cringe")
+    tweet(api, " ")
 
 
 

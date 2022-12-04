@@ -6,18 +6,23 @@ import weatherkey
 
 
 def get_weather(api_key, city_name):
-    ''' Retrieves weather data '''
+    ''' Retrieves weather data from openweathermap api '''
     url =f"https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid={api_key}"
     return requests.get(url).json()
-    #print(response)
     #print(json.dumps(response, indent=2)
+
 
 
 def temp_convert(kelvin):
     ''' Converts kelvin to fahrenheit '''
     celsius = kelvin - 273.15
-    fahrenheit = celsius * (9/5) + 32
-    return fahrenheit
+    return celsius * (9/5) + 32
+
+
+
+def weather_report():
+    # returns formatted string of weather report
+    return f"Current temperature: {temp_fahrenheit:.2f}F°\nFeels like {feel_like_fahrenheit:.2f}F°\nGeneral weather is {description}\nHumidity: {humidity}%\nWind speed: {wind_speed}m/s\nMax/Min expected temperature: {max_temp_fahrenheit:.2f}F°, {min_temp_fahrenheit:.2f}F°\nSun rises in Philadelphia at {sunrise_time} local time"
 
 
 
@@ -50,12 +55,9 @@ sunrise_time = datetime.datetime.utcfromtimestamp(data['sys']['sunrise'] + data[
 
 
 
-def weather_report():
-    # returns formatted string of weather report
-    return f"Current temperature: {temp_fahrenheit:.2f}F°\nFeels like {feel_like_fahrenheit:.2f}F°\nGeneral weather is {description}\nHumidity: {humidity}%\nWind speed: {wind_speed}m/s\nMax/Min expected temperature: {max_temp_fahrenheit:.2f}F°, {min_temp_fahrenheit:.2f}F°\nSun rises in Philadelphia at {sunrise_time} local time"
+
 
 print(weather_report())
-
 
 
 
