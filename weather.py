@@ -22,7 +22,7 @@ def temp_convert(kelvin):
 
 def weather_report():
     # returns formatted string of weather report
-    return f"Current temperature: {temp_fahrenheit:.2f}F°\nFeels like {feel_like_fahrenheit:.2f}F°\nGeneral weather is {description}\nHumidity: {humidity}%\nWind speed: {wind_speed}m/s\nMax/Min expected temperature: {max_temp_fahrenheit:.2f}F°, {min_temp_fahrenheit:.2f}F°\nSun rises in Philadelphia at {sunrise_time} local time"
+    return f"Daily Weather Report!\n\nCurrent temperature: {temp_fahrenheit:.2f}F°\nFeels like {feel_like_fahrenheit:.2f}F°\nGeneral weather is {description}\nHumidity: {humidity}%\nWind speed: {wind_speed}m/s\nMax/Min expected temperature: {max_temp_fahrenheit:.2f}F°, {min_temp_fahrenheit:.2f}F°\nSun rises in Philadelphia at {sunrise_time} local time"
 
 
 
