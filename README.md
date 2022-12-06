@@ -1,4 +1,8 @@
-# finalproject
+# finalproject (StormPY)
+
+Twitter Account: @StormPY_weather
+
+
 
 First created twitter developer account to access api keys and access tokens
 
