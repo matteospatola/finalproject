@@ -20,9 +20,9 @@ def tweet(api: tweepy.API, message: str, image_path=None):
     print("Tweet was successful!")
 
 
-if __name__ == "__main__":
-    api = api()
-    tweet(api, " ")
+#if __name__ == "__main__":
+#api = api()
+#tweet(api, " ")
 
 
 

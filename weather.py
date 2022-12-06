@@ -57,7 +57,7 @@ sunrise_time = datetime.datetime.utcfromtimestamp(data['sys']['sunrise'] + data[
 
 
 
-print(weather_report())
+
 
 
 
